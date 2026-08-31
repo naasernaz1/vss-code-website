@@ -314,6 +314,7 @@ def services():
     """Display DMS services."""
     return render_template("services.html")
 
+
 @app.route("/about")
 def about():
     return render_template("about.html")
