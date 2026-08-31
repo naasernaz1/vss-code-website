@@ -1,0 +1,22 @@
+DIGITAL MARKETING SOLUTIONS
+--------------------------------
+Invoice: DMS-0001
+Date: 26/08/2026 12:02
+
+Customer: naaser
+Business: dick
+Email: naaser192192@gmail.com
+
+Package: Starter
+Package price: $399.00
+
+Add-ons:
+- Social Media Starter Pack
+- Google Business Profile Setup
+- Analytics Setup
+
+Subtotal: $846.00
+Discount: -$0.00
+Total: $846.00
+
+Thank you for choosing DMS.
