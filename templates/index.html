@@ -1,315 +1,50 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nazif's Scents</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+</head>
 
-{% block title %}
-DMS | Digital Marketing Solutions
-{% endblock %}
+<body>
 
+<nav>
+    <h2>Nazif's Scents</h2>
 
-{% block content %}
-
-<section class="hero-section">
-
-    <div class="hero-content">
-
-        <p class="eyebrow">
-            DIGITAL GROWTH FOR SMALL BUSINESSES
-        </p>
-
-        <h1>
-            Make your business
-            <span>stand out online.</span>
-        </h1>
-
-        <p class="hero-description">
-
-            DMS helps small businesses build professional
-            websites, stronger brands and effective digital
-            marketing strategies.
-
-        </p>
-
-
-        <div class="hero-buttons">
-
-            <a
-                href="{{ url_for('packages') }}"
-                class="button primary-button"
-            >
-                Build My Package
-            </a>
-
-            <a
-                href="{{ url_for('services') }}"
-                class="button secondary-button"
-            >
-                Explore Services
-            </a>
-
-        </div>
-
-
-        <div class="statistics">
-
-            <div>
-                <strong>4</strong>
-                <span>Flexible packages</span>
-            </div>
-
-            <div>
-                <strong>4+</strong>
-                <span>Core services</span>
-            </div>
-
-            <div>
-                <strong>10%</strong>
-                <span>Large-order discount</span>
-            </div>
-
-        </div>
-
+    <div>
+        <a href="#">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
     </div>
+</nav>
 
+<section class="hero">
+    <h1>Nazif's Scents</h1>
+    <h3>DISCOVER YOUR SIGNATURE</h3>
 
-    <div class="hero-image">
+    <p>Luxury fragrances made to leave a lasting impression.</p>
 
-        <img
-            src="{{ url_for(
-                'static',
-                filename='images/hero.svg'
-            ) }}"
-            alt="Digital marketing growth illustration"
-        >
-
-    </div>
-
+    <a href="#shop">SHOP NOW</a>
 </section>
 
+<section id="shop">
 
-<section class="section-container">
+    <h2>FEATURED SCENTS</h2>
 
-    <div class="section-heading">
+    <div class="products">
 
-        <p class="eyebrow">
-            WHAT WE DO
-        </p>
+        {% for product in products %}
 
-        <h2>
-            Everything you need to grow online.
-        </h2>
+        <div class="card">
 
-    </div>
+            <div class="bottle">NS</div>
 
+            <h3>{{ product[0] }}</h3>
 
-    <div class="services-grid">
+            <p>NZ${{ product[1] }}</p>
 
-        <article class="service-card">
-
-            <span>01</span>
-
-            <h3>
-                Website Design
-            </h3>
-
-            <p>
-                Professional websites designed to
-                turn visitors into enquiries.
-            </p>
-
-        </article>
-
-
-        <article class="service-card">
-
-            <span>02</span>
-
-            <h3>
-                Branding
-            </h3>
-
-            <p>
-                Memorable visual identities that
-                build trust with customers.
-            </p>
-
-        </article>
-
-
-        <article class="service-card">
-
-            <span>03</span>
-
-            <h3>
-                SEO
-            </h3>
-
-            <p>
-                Improve your online visibility and
-                help customers find your business.
-            </p>
-
-        </article>
-
-
-        <article class="service-card">
-
-            <span>04</span>
-
-            <h3>
-                Advertising
-            </h3>
-
-            <p>
-                Reach potential customers with
-                targeted digital advertising.
-            </p>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<section class="process-section">
-
-    <div class="section-container">
-
-        <p class="eyebrow light-eyebrow">
-            HOW IT WORKS
-        </p>
-
-        <h2>
-            From idea to online growth.
-        </h2>
-
-
-        <div class="process-grid">
-
-            <article>
-
-                <span>1</span>
-
-                <h3>
-                    Discover
-                </h3>
-
-                <p>
-                    Understand your business and goals.
-                </p>
-
-            </article>
-
-
-            <article>
-
-                <span>2</span>
-
-                <h3>
-                    Plan
-                </h3>
-
-                <p>
-                    Choose the right services and package.
-                </p>
-
-            </article>
-
-
-            <article>
-
-                <span>3</span>
-
-                <h3>
-                    Create
-                </h3>
-
-                <p>
-                    Build your digital marketing solution.
-                </p>
-
-            </article>
-
-
-            <article>
-
-                <span>4</span>
-
-                <h3>
-                    Grow
-                </h3>
-
-                <p>
-                    Launch, review and improve your results.
-                </p>
-
-            </article>
+            <button>ADD TO CART</button>
 
         </div>
-
-    </div>
-
-</section>
-
-
-<section class="section-container packages-preview">
-
-    <div class="section-heading">
-
-        <p class="eyebrow">
-            PACKAGES
-        </p>
-
-        <h2>
-            Choose the right level of support.
-        </h2>
-
-    </div>
-
-
-    <div class="packages-grid">
-
-        {% for package in packages %}
-
-            <article class="package-card
-                {% if package.featured %}
-                featured-package
-                {% endif %}"
-            >
-
-                {% if package.featured %}
-
-                    <span class="popular-label">
-                        MOST POPULAR
-                    </span>
-
-                {% endif %}
-
-
-                <p class="package-name">
-                    {{ package.name }}
-                </p>
-
-                <h3>
-                    ${{ package.price }}
-                </h3>
-
-                <p>
-                    {{ package.description }}
-                </p>
-
-                <p class="availability">
-                    {{ package.availability }}
-                    slots available
-                </p>
-
-                <a
-                    href="{{ url_for('packages') }}"
-                    class="button secondary-button"
-                >
-                    View Package
-                </a>
-
-            </article>
 
         {% endfor %}
 
@@ -317,34 +52,20 @@ DMS | Digital Marketing Solutions
 
 </section>
 
+<section id="about">
 
-<section class="call-to-action section-container">
+    <h2>About Nazif's Scents</h2>
 
-    <div>
-
-        <p class="eyebrow light-eyebrow">
-            READY TO GROW?
-        </p>
-
-        <h2>
-            Build your digital presence today.
-        </h2>
-
-        <p>
-            Choose a package and customise it with
-            optional services.
-        </p>
-
-    </div>
-
-
-    <a
-        href="{{ url_for('packages') }}"
-        class="button light-button"
-    >
-        Get Started
-    </a>
+    <p>
+        Nazif's Scents is a luxury fragrance store offering
+        premium perfumes for every occasion.
+    </p>
 
 </section>
 
-{% endblock %}
+<footer>
+    © 2026 Nazif's Scents
+</footer>
+
+</body>
+</html>
