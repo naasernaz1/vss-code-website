@@ -1,65 +1,43 @@
 {% extends "base.html" %}
 
 {% block title %}
-Nazif's Scents | Home
+Shop | Nazif's Scents
 {% endblock %}
 
 
 {% block content %}
 
-<section class="hero">
+<section class="page-header">
 
-    <div>
+    <p>THE COLLECTION</p>
 
-        <p>THE ART OF FRAGRANCE</p>
-
-        <h1>
-            Find your<br>
-            <span>signature scent.</span>
-        </h1>
-
-        <p>
-            Discover fragrances designed to
-            make a lasting impression.
-        </p>
-
-        <a href="/shop" class="button">
-            SHOP NOW
-        </a>
-
-    </div>
+    <h1>
+        Shop Fragrances
+    </h1>
 
 </section>
 
 
-<section class="intro">
+<div class="category-links">
 
-    <p>NAZIF'S SCENTS</p>
+    <a href="/shop">All</a>
 
-    <h2>
-        Fragrance made personal.
-    </h2>
+    <a href="/shop?category=Men's">
+        Men's
+    </a>
 
-    <p>
-        Explore our collection of men's,
-        women's and unisex fragrances.
-    </p>
+    <a href="/shop?category=Women's">
+        Women's
+    </a>
 
-</section>
+    <a href="/shop?category=Unisex">
+        Unisex
+    </a>
+
+</div>
 
 
 <section class="products">
-
-    <div class="section-title">
-
-        <p>FEATURED</p>
-
-        <h2>
-            Our fragrances
-        </h2>
-
-    </div>
-
 
     <div class="product-grid">
 
@@ -109,3 +87,5 @@ Nazif's Scents | Home
     </div>
 
 </section>
+
+{% endblock %}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}Nazif's Scents{% endblock %}
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='CSS/style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <a href="/" class="logo">
+        NAZIF'S <span>SCENTS</span>
+    </a>
+
+    <nav>
+
+        <a href="/">Home</a>
+
+        <a href="/shop">Shop</a>
+
+        <a href="/shop?category=Men's">Men's</a>
+
+        <a href="/shop?category=Women's">Women's</a>
+
+        <a href="/shop?category=Unisex">Unisex</a>
+
+        <a href="/about">About</a>
+
+    </nav>
+
+    <a href="/cart" class="cart">
+        🛒 Cart
+    </a>
+
+</header>
+
+
+<main>
+
+    {% block content %}
+    {% endblock %}
+
+</main>
+
+
+<footer>
+
+    <h2>NAZIF'S SCENTS</h2>
+
+    <p>
+        Discover your signature scent.
+    </p>
+
+    <p>
+        © 2026 Nazif's Scents
+    </p>
+
+</footer>
+
+</body>
+
+</html>

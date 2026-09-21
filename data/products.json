@@ -1,0 +1,55 @@
+ {
+        "id": 1,
+        "name": "Nazif Noir",
+        "price": 49.99,
+        "category": "Men's",
+        "notes": "Woody • Spicy • Amber",
+        "description": "A bold and sophisticated fragrance made for confidence.",
+        "image": "hero.svg"
+    },
+    {
+        "id": 2,
+        "name": "Royal Oud",
+        "price": 59.99,
+        "category": "Men's",
+        "notes": "Oud • Amber • Woods",
+        "description": "A rich and warm fragrance with a luxurious oud character.",
+        "image": "hero.svg"
+    },
+    {
+        "id": 3,
+        "name": "Velvet Rose",
+        "price": 54.99,
+        "category": "Women's",
+        "notes": "Rose • Vanilla • Floral",
+        "description": "A soft floral fragrance with an elegant and modern character.",
+        "image": "hero.svg"
+    },
+    {
+        "id": 4,
+        "name": "Midnight Musk",
+        "price": 44.99,
+        "category": "Unisex",
+        "notes": "Musk • Fresh • Spice",
+        "description": "A smooth everyday fragrance suitable for any occasion.",
+        "image": "hero.svg"
+    },
+    {
+        "id": 5,
+        "name": "Golden Vanilla",
+        "price": 39.99,
+        "category": "Women's",
+        "notes": "Vanilla • Sweet • Amber",
+        "description": "A warm and sweet vanilla fragrance with a luxurious finish.",
+        "image": "hero.svg"
+    },
+    {
+        "id": 6,
+        "name": "Desert Oud",
+        "price": 69.99,
+        "category": "Unisex",
+        "notes": "Oud • Woody • Spicy",
+        "description": "An intense fragrance inspired by traditional Middle Eastern scents.",
+        "image": "hero.svg"
+    }
+]
