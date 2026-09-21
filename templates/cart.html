@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}
+Cart | Nazif's Scents
+{% endblock %}
+
+
+{% block content %}
+
+<section class="page-header">
+
+    <p>YOUR BAG</p>
+
+    <h1>
+        Shopping Cart
+    </h1>
+
+</section>
+
+
+<section class="cart">
+
+    {% if products %}
+
+        {% for product in products %}
+
+        <div class="cart-item">
+
+            <img
+                src="{{ url_for(
+                    'static',
+                    filename='images/' + product.image
+                ) }}"
+                alt="{{ product.name }}"
+            >
+
+            <div>
+
+                <h3>
+                    {{ product.name }}
+                </h3>
+
+                <p>
+                    {{ product.notes }}
+                </p>
+
+            </div>
+
+            <strong>
+                ${{ "%.2f"|format(product.price) }}
+            </strong>
+
+        </div>
+
+        {% endfor %}
+
+
+        <div class="cart-total">
+
+            <h2>
+                Total: ${{ "%.2f"|format(total) }}
+            </h2>
+
+            <a href="/checkout" class="button">
+                CHECKOUT
+            </a>
+
+        </div>
+
+
+    {% else %}
+
+        <div class="empty">
+
+            <h2>
+                Your cart is empty.
+            </h2>
+
+            <a href="/shop" class="button">
+                SHOP NOW
+            </a>
+
+        </div>
+
+    {% endif %}
+
+</section>
+
+{% endblock %}
