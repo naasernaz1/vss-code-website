@@ -1,4 +1,5 @@
- {
+[
+    {
         "id": 1,
         "name": "Nazif Noir",
         "price": 49.99,
@@ -22,7 +23,7 @@
         "price": 54.99,
         "category": "Women's",
         "notes": "Rose • Vanilla • Floral",
-        "description": "A soft floral fragrance with an elegant and modern character.",
+        "description": "A soft floral fragrance with an elegant character.",
         "image": "hero.svg"
     },
     {
@@ -49,7 +50,7 @@
         "price": 69.99,
         "category": "Unisex",
         "notes": "Oud • Woody • Spicy",
-        "description": "An intense fragrance inspired by traditional Middle Eastern scents.",
+        "description": "An intense fragrance inspired by Middle Eastern scents.",
         "image": "hero.svg"
     }
 ]
