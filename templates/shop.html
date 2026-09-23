@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}
+Shop | Nazif's Scents
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+
+    <p class="eyebrow">
+        THE COLLECTION
+    </p>
+
+    <h1>
+        Shop fragrances
+    </h1>
+
+    <p>
+        Find your next signature scent.
+    </p>
+
+</section>
+
+
+<div class="filters">
+
+    <a href="{{ url_for('shop') }}">
+        All
+    </a>
+
+    <a href="{{ url_for('men') }}">
+        Men's
+    </a>
+
+    <a href="{{ url_for('women') }}">
+        Women's
+    </a>
+
+</div>
+
+
+<section class="products">
+
+    <div class="product-grid">
+
+        {% for product in products %}
+
+        <div class="product-card">
+
+            <a href="{{ url_for(
+                'product',
+                product_id=product.id
+            ) }}">
+
+                <img
+                    src="{{ url_for(
+                        'static',
+                        filename='images/' + product.image
+                    ) }}"
+                    alt="{{ product.name }}"
+                >
+
+            </a>
+
+            <div class="card-info">
+
+                <p class="category">
+                    {{ product.category }}
+                </p>
+
+                <h3>
+                    {{ product.name }}
+                </h3>
+
+                <p>
+                    {{ product.notes }}
+                </p>
+
+                <strong>
+                    ${{ "%.2f"|format(product.price) }}
+                </strong>
+
+                <a
+                    href="{{ url_for(
+                        'add_to_cart',
+                        product_id=product.id
+                    ) }}"
+                    class="add-button"
+                >
+                    ADD TO CART
+                </a>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

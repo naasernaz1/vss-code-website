@@ -4,12 +4,13 @@
 Checkout | Nazif's Scents
 {% endblock %}
 
-
 {% block content %}
 
 <section class="page-header">
 
-    <p>CHECKOUT</p>
+    <p class="eyebrow">
+        CHECKOUT
+    </p>
 
     <h1>
         Complete your order
@@ -20,70 +21,34 @@ Checkout | Nazif's Scents
 
 <section class="checkout">
 
-    {% if complete %}
+    <form>
 
-        <div class="success">
+        <label>
+            Full Name
+        </label>
 
-            <h2>
-                Thank you for your order!
-            </h2>
-
-            <p>
-                Your Nazif's Scents order has been received.
-            </p>
-
-            <a href="/shop" class="button">
-                CONTINUE SHOPPING
-            </a>
-
-        </div>
-
-    {% else %}
-
-        <form method="POST">
-
-            <label>
-                Full Name
-            </label>
-
-            <input
-                type="text"
-                name="name"
-                required
-            >
+        <input type="text" required>
 
 
-            <label>
-                Email
-            </label>
+        <label>
+            Email
+        </label>
 
-            <input
-                type="email"
-                name="email"
-                required
-            >
+        <input type="email" required>
 
 
-            <label>
-                Delivery Address
-            </label>
+        <label>
+            Delivery Address
+        </label>
 
-            <textarea
-                name="address"
-                required
-            ></textarea>
+        <textarea required></textarea>
 
 
-            <button
-                type="submit"
-                class="button"
-            >
-                PLACE ORDER
-            </button>
+        <button class="button" type="submit">
+            PLACE ORDER
+        </button>
 
-        </form>
-
-    {% endif %}
+    </form>
 
 </section>
 

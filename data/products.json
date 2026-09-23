@@ -5,8 +5,8 @@
         "price": 49.99,
         "category": "Men's",
         "notes": "Woody • Spicy • Amber",
-        "description": "A bold and sophisticated fragrance made for confidence.",
-        "image": "hero.svg"
+        "image": "nazif-noir.png",
+        "description": "A bold and sophisticated fragrance with warm woody and spicy notes."
     },
     {
         "id": 2,
@@ -14,8 +14,8 @@
         "price": 59.99,
         "category": "Men's",
         "notes": "Oud • Amber • Woods",
-        "description": "A rich and warm fragrance with a luxurious oud character.",
-        "image": "hero.svg"
+        "image": "royal-oud.png",
+        "description": "A rich oud fragrance with deep amber and woody tones."
     },
     {
         "id": 3,
@@ -23,17 +23,17 @@
         "price": 54.99,
         "category": "Women's",
         "notes": "Rose • Vanilla • Floral",
-        "description": "A soft floral fragrance with an elegant character.",
-        "image": "hero.svg"
+        "image": "velvet-rose.png",
+        "description": "A soft and elegant floral fragrance with rose and vanilla."
     },
     {
         "id": 4,
         "name": "Midnight Musk",
         "price": 44.99,
-        "category": "Unisex",
+        "category": "Men's",
         "notes": "Musk • Fresh • Spice",
-        "description": "A smooth everyday fragrance suitable for any occasion.",
-        "image": "hero.svg"
+        "image": "midnight-musk.png",
+        "description": "A smooth everyday fragrance with fresh musk and subtle spice."
     },
     {
         "id": 5,
@@ -41,16 +41,16 @@
         "price": 39.99,
         "category": "Women's",
         "notes": "Vanilla • Sweet • Amber",
-        "description": "A warm and sweet vanilla fragrance with a luxurious finish.",
-        "image": "hero.svg"
+        "image": "golden-vanilla.png",
+        "description": "A warm and sweet vanilla fragrance with a luxurious finish."
     },
     {
         "id": 6,
         "name": "Desert Oud",
         "price": 69.99,
-        "category": "Unisex",
+        "category": "Men's",
         "notes": "Oud • Woody • Spicy",
-        "description": "An intense fragrance inspired by Middle Eastern scents.",
-        "image": "hero.svg"
+        "image": "desert-oud.png",
+        "description": "An intense woody oud inspired by Middle Eastern fragrances."
     }
 ]

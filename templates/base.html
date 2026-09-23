@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -13,55 +12,40 @@
     </title>
 
     <link rel="stylesheet"
-          href="{{ url_for('static', filename='CSS/style.css') }}">
-
+          href="{{ url_for('static',
+          filename='CSS/style.css') }}">
 </head>
 
 <body>
 
 <header>
 
-    <a href="/" class="logo">
+    <a href="{{ url_for('home') }}" class="logo">
         NAZIF'S <span>SCENTS</span>
     </a>
 
     <nav>
-
-        <a href="/">Home</a>
-
-        <a href="/shop">Shop</a>
-
-        <a href="/shop?category=Men's">Men's</a>
-
-        <a href="/shop?category=Women's">Women's</a>
-
-        <a href="/shop?category=Unisex">Unisex</a>
-
-        <a href="/about">About</a>
-
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('shop') }}">Shop</a>
+        <a href="{{ url_for('men') }}">Men's</a>
+        <a href="{{ url_for('women') }}">Women's</a>
+        <a href="{{ url_for('about') }}">About</a>
     </nav>
 
-    <a href="/cart" class="cart">
-        🛒 Cart
+    <a href="{{ url_for('cart') }}" class="cart-link">
+        🛍 Cart
     </a>
 
 </header>
 
-
-<main>
-
-    {% block content %}
-    {% endblock %}
-
-</main>
-
+{% block content %}{% endblock %}
 
 <footer>
 
     <h2>NAZIF'S SCENTS</h2>
 
     <p>
-        Discover your signature scent.
+        Luxury-inspired fragrances for every occasion.
     </p>
 
     <p>
@@ -71,5 +55,4 @@
 </footer>
 
 </body>
-
 </html>

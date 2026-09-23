@@ -1,11 +1,10 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, redirect, url_for, session
 import json
 
 app = Flask(__name__)
-app.secret_key = "nazifs-scents"
+app.secret_key = "nazifs-scents-secret"
 
-# Load products
-with open("data/products.json", "r") as file:
+with open("data/products.json", "r", encoding="utf-8") as file:
     products = json.load(file)
 
 
@@ -16,41 +15,64 @@ def home():
 
 @app.route("/shop")
 def shop():
-    category = request.args.get("category", "All")
+    category = "All"
+    shown_products = products
 
-    if category == "All":
-        filtered_products = products
-    else:
-        filtered_products = [
-            p for p in products if p["category"] == category
+    if category == "Men's":
+        shown_products = [
+            p for p in products if p["category"] == "Men's"
         ]
 
     return render_template(
         "shop.html",
-        products=filtered_products,
+        products=shown_products,
         category=category
+    )
+
+
+@app.route("/men")
+def men():
+    shown_products = [
+        p for p in products if p["category"] == "Men's"
+    ]
+
+    return render_template(
+        "shop.html",
+        products=shown_products,
+        category="Men's"
+    )
+
+
+@app.route("/women")
+def women():
+    shown_products = [
+        p for p in products if p["category"] == "Women's"
+    ]
+
+    return render_template(
+        "shop.html",
+        products=shown_products,
+        category="Women's"
     )
 
 
 @app.route("/product/<int:product_id>")
 def product(product_id):
-    product = next(
+    item = next(
         (p for p in products if p["id"] == product_id),
         None
     )
 
-    return render_template(
-        "product.html",
-        product=product
-    )
+    if item is None:
+        return "Product not found", 404
+
+    return render_template("products.html", product=item)
 
 
 @app.route("/add/<int:product_id>")
 def add_to_cart(product_id):
     cart = session.get("cart", [])
-
     cart.append(product_id)
-
     session["cart"] = cart
 
     return redirect(url_for("cart"))
@@ -73,23 +95,34 @@ def cart():
     )
 
 
-@app.route("/checkout", methods=["GET", "POST"])
+@app.route("/checkout")
 def checkout():
-
-    if request.method == "POST":
-        session["cart"] = []
-
-        return render_template(
-            "checkout.html",
-            complete=True
-        )
-
     return render_template("checkout.html")
 
 
 @app.route("/about")
 def about():
     return render_template("about.html")
+
+
+@app.route("/services")
+def services():
+    return render_template("services.html")
+
+
+@app.route("/packages")
+def packages():
+    return render_template("packages.html")
+
+
+@app.route("/invoices")
+def invoices():
+    return render_template("invoices.html")
+
+
+@app.route("/order-history")
+def order_history():
+    return render_template("order_history.html")
 
 
 if __name__ == "__main__":

@@ -4,27 +4,29 @@
 Nazif's Scents | Home
 {% endblock %}
 
-
 {% block content %}
 
+<!-- HERO -->
 <section class="hero">
 
-    <div>
+    <div class="hero-content">
 
-        <p>THE ART OF FRAGRANCE</p>
+        <p class="eyebrow">
+            THE ART OF FRAGRANCE
+        </p>
 
         <h1>
-            Find your<br>
+            Find your
             <span>signature scent.</span>
         </h1>
 
         <p>
-            Discover fragrances designed to
-            make a lasting impression.
+            Discover elegant fragrances created to
+            leave a lasting impression.
         </p>
 
-        <a href="/shop" class="button">
-            SHOP NOW
+        <a href="{{ url_for('shop') }}" class="button">
+            SHOP COLLECTION
         </a>
 
     </div>
@@ -32,31 +34,43 @@ Nazif's Scents | Home
 </section>
 
 
+<!-- INTRO -->
 <section class="intro">
 
-    <p>NAZIF'S SCENTS</p>
+    <p class="eyebrow">
+        NAZIF'S SCENTS
+    </p>
 
     <h2>
         Fragrance made personal.
     </h2>
 
     <p>
-        Explore our collection of men's,
-        women's and unisex fragrances.
+        Explore our collection of bold,
+        elegant and memorable scents.
     </p>
 
 </section>
 
 
+<!-- PRODUCTS -->
 <section class="products">
 
-    <div class="section-title">
+    <div class="section-heading">
 
-        <p>FEATURED</p>
+        <div>
+            <p class="eyebrow">
+                FEATURED
+            </p>
 
-        <h2>
-            Our fragrances
-        </h2>
+            <h2>
+                Our fragrances
+            </h2>
+        </div>
+
+        <a href="{{ url_for('shop') }}">
+            View all →
+        </a>
 
     </div>
 
@@ -67,40 +81,41 @@ Nazif's Scents | Home
 
         <div class="product-card">
 
-            <a href="/product/{{ product.id }}">
+            <a href="{{ url_for('product', product_id=product.id) }}">
 
                 <img
-                    src="{{ url_for(
-                        'static',
-                        filename='images/' + product.image
-                    ) }}"
+                    src="{{ url_for('static', filename='images/' + product.image) }}"
                     alt="{{ product.name }}"
                 >
 
             </a>
 
-            <p class="category">
-                {{ product.category }}
-            </p>
+            <div class="card-info">
 
-            <h3>
-                {{ product.name }}
-            </h3>
+                <p class="category">
+                    {{ product.category }}
+                </p>
 
-            <p>
-                {{ product.notes }}
-            </p>
+                <h3>
+                    {{ product.name }}
+                </h3>
 
-            <strong>
-                ${{ "%.2f"|format(product.price) }}
-            </strong>
+                <p>
+                    {{ product.notes }}
+                </p>
 
-            <a
-                href="/add/{{ product.id }}"
-                class="add-button"
-            >
-                ADD TO CART
-            </a>
+                <strong>
+                    ${{ "%.2f"|format(product.price) }}
+                </strong>
+
+                <a
+                    href="{{ url_for('add_to_cart', product_id=product.id) }}"
+                    class="add-button"
+                >
+                    ADD TO CART
+                </a>
+
+            </div>
 
         </div>
 
@@ -109,6 +124,5 @@ Nazif's Scents | Home
     </div>
 
 </section>
-
 
 {% endblock %}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ product.name }} | Nazif's Scents
+{% endblock %}
+
+{% block content %}
+
+<section class="product-page">
+
+    <div>
+
+        <img
+            src="{{ url_for(
+                'static',
+                filename='images/' + product.image
+            ) }}"
+            alt="{{ product.name }}"
+        >
+
+    </div>
+
+
+    <div class="product-details">
+
+        <p class="category">
+            {{ product.category }}
+        </p>
+
+        <h1>
+            {{ product.name }}
+        </h1>
+
+        <div class="stars">
+            ★★★★★
+        </div>
+
+        <h2>
+            ${{ "%.2f"|format(product.price) }}
+        </h2>
+
+        <p>
+            {{ product.description }}
+        </p>
+
+        <div class="notes-box">
+
+            <p class="eyebrow">
+                FRAGRANCE NOTES
+            </p>
+
+            <p>
+                {{ product.notes }}
+            </p>
+
+        </div>
+
+        <a
+            href="{{ url_for(
+                'add_to_cart',
+                product_id=product.id
+            ) }}"
+            class="button"
+        >
+            ADD TO CART
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

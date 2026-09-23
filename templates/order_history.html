@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+Order History | Nazif's Scents
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+
+    <p class="eyebrow">
+        CUSTOMER AREA
+    </p>
+
+    <h1>
+        Order history
+    </h1>
+
+</section>
+
+
+<section class="empty">
+
+    <h2>
+        No previous orders
+    </h2>
+
+    <p>
+        Your orders will appear here after checkout.
+    </p>
+
+    <a
+        href="{{ url_for('shop') }}"
+        class="button"
+    >
+        SHOP NOW
+    </a>
+
+</section>
+
+{% endblock %}

@@ -4,15 +4,14 @@
 Cart | Nazif's Scents
 {% endblock %}
 
-
 {% block content %}
 
 <section class="page-header">
 
-    <p>YOUR BAG</p>
+    <p class="eyebrow">YOUR BAG</p>
 
     <h1>
-        Shopping Cart
+        Shopping cart
     </h1>
 
 </section>
@@ -36,6 +35,10 @@ Cart | Nazif's Scents
 
             <div>
 
+                <p class="category">
+                    {{ product.category }}
+                </p>
+
                 <h3>
                     {{ product.name }}
                 </h3>
@@ -58,15 +61,18 @@ Cart | Nazif's Scents
         <div class="cart-total">
 
             <h2>
-                Total: ${{ "%.2f"|format(total) }}
+                Total:
+                ${{ "%.2f"|format(total) }}
             </h2>
 
-            <a href="/checkout" class="button">
+            <a
+                href="{{ url_for('checkout') }}"
+                class="button"
+            >
                 CHECKOUT
             </a>
 
         </div>
-
 
     {% else %}
 
@@ -76,7 +82,14 @@ Cart | Nazif's Scents
                 Your cart is empty.
             </h2>
 
-            <a href="/shop" class="button">
+            <p>
+                Discover your next signature scent.
+            </p>
+
+            <a
+                href="{{ url_for('shop') }}"
+                class="button"
+            >
                 SHOP NOW
             </a>
 
