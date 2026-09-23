@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 
 {% block title %}
-Shop | Nazif's Scents
+{{ page_title }} | Nazif's Scents
 {% endblock %}
+
 
 {% block content %}
 
@@ -13,31 +14,14 @@ Shop | Nazif's Scents
     </p>
 
     <h1>
-        Shop fragrances
+        {{ page_title }}
     </h1>
 
     <p>
-        Find your next signature scent.
+        {{ page_subtitle }}
     </p>
 
 </section>
-
-
-<div class="filters">
-
-    <a href="{{ url_for('shop') }}">
-        All
-    </a>
-
-    <a href="{{ url_for('men') }}">
-        Men's
-    </a>
-
-    <a href="{{ url_for('women') }}">
-        Women's
-    </a>
-
-</div>
 
 
 <section class="products">
@@ -62,6 +46,7 @@ Shop | Nazif's Scents
                 >
 
             </a>
+
 
             <div class="card-info">
 
