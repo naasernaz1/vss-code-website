@@ -6,13 +6,20 @@ Cart | Nazif's Scents
 
 {% block content %}
 
+
 <section class="page-header">
 
-    <p class="eyebrow">YOUR BAG</p>
+    <p class="eyebrow">
+        YOUR BAG
+    </p>
 
     <h1>
-        Shopping cart
+        Shopping Cart
     </h1>
+
+    <p>
+        Review your fragrances before checkout.
+    </p>
 
 </section>
 
@@ -23,56 +30,63 @@ Cart | Nazif's Scents
 
         {% for product in products %}
 
-        <div class="cart-item">
+            <div class="cart-item">
 
-            <img
-                src="{{ url_for(
-                    'static',
-                    filename='images/' + product.image
-                ) }}"
-                alt="{{ product.name }}"
-            >
+                <img
+                    src="{{ url_for(
+                        'static',
+                        filename='images/' + product.image
+                    ) }}"
+                    alt="{{ product.name }}"
+                >
 
-            <div>
 
-                <p class="category">
-                    {{ product.category }}
-                </p>
+                <div class="cart-info">
 
-                <h3>
-                    {{ product.name }}
-                </h3>
+                    <p class="category">
+                        {{ product.category }}
+                    </p>
 
-                <p>
-                    {{ product.notes }}
-                </p>
+                    <h3>
+                        {{ product.name }}
+                    </h3>
+
+                    <p>
+                        {{ product.notes }}
+                    </p>
+
+                </div>
+
+
+                <strong>
+                    ${{ "%.2f"|format(product.price) }}
+                </strong>
 
             </div>
-
-            <strong>
-                ${{ "%.2f"|format(product.price) }}
-            </strong>
-
-        </div>
 
         {% endfor %}
 
 
         <div class="cart-total">
 
+            <p>
+                Order Total
+            </p>
+
             <h2>
-                Total:
                 ${{ "%.2f"|format(total) }}
             </h2>
+
 
             <a
                 href="{{ url_for('checkout') }}"
                 class="button"
             >
-                CHECKOUT
+                PROCEED TO CHECKOUT
             </a>
 
         </div>
+
 
     {% else %}
 
@@ -98,5 +112,6 @@ Cart | Nazif's Scents
     {% endif %}
 
 </section>
+
 
 {% endblock %}
