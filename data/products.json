@@ -1,5 +1,5 @@
-[
-    {
+   [
+   {
         "id": 1,
         "name": "Nazif Noir",
         "price": 49.99,
@@ -52,5 +52,59 @@
         "notes": "Oud • Woody • Spicy",
         "image": "desert-oud.png",
         "description": "An intense woody oud inspired by Middle Eastern fragrances."
+    },
+    {
+        "id": 7,
+        "name": "Black Amber",
+        "price": 64.99,
+        "category": "Men's",
+        "notes": "Amber • Leather • Woods",
+        "image": "black-amber.png",
+        "description": "A deep and luxurious fragrance combining warm amber with rich woody notes."
+    },
+    {
+        "id": 8,
+        "name": "Imperial Spice",
+        "price": 54.99,
+        "category": "Men's",
+        "notes": "Spice • Oud • Amber",
+        "image": "imperial-spice.png",
+        "description": "A warm and powerful fragrance with spicy and oriental notes."
+    },
+    {
+        "id": 9,
+        "name": "Silk Blossom",
+        "price": 49.99,
+        "category": "Women's",
+        "notes": "Floral • Jasmine • Musk",
+        "image": "silk-blossom.png",
+        "description": "A delicate floral fragrance with soft jasmine and clean musk."
+    },
+    {
+        "id": 10,
+        "name": "Rose Elegance",
+        "price": 59.99,
+        "category": "Women's",
+        "notes": "Rose • Amber • Vanilla",
+        "image": "rose-elegance.png",
+        "description": "An elegant rose fragrance balanced with warm amber and vanilla."
+    },
+    {
+        "id": 11,
+        "name": "Pearl Jasmine",
+        "price": 52.99,
+        "category": "Women's",
+        "notes": "Jasmine • Floral • Musk",
+        "image": "pearl-jasmine.png",
+        "description": "A fresh and elegant floral scent centred around jasmine and soft musk."
+    },
+    {
+        "id": 12,
+        "name": "Vanilla Royale",
+        "price": 57.99,
+        "category": "Women's",
+        "notes": "Vanilla • Caramel • Amber",
+        "image": "vanilla-royale.png",
+        "description": "A rich and sweet vanilla fragrance with creamy caramel and amber."
     }
 ]

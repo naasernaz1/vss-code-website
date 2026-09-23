@@ -1,19 +1,12 @@
 {% extends "base.html" %}
 
-{% block title %}
-Nazif's Scents | Home
-{% endblock %}
+{% block title %}Nazif's Scents | Home{% endblock %}
 
 {% block content %}
 
-<!-- HERO -->
 <section class="hero">
-
     <div class="hero-content">
-
-        <p class="eyebrow">
-            THE ART OF FRAGRANCE
-        </p>
+        <p class="eyebrow">THE ART OF FRAGRANCE</p>
 
         <h1>
             Find your
@@ -21,57 +14,38 @@ Nazif's Scents | Home
         </h1>
 
         <p>
-            Discover elegant fragrances created to
-            leave a lasting impression.
+            Discover elegant fragrances made to leave a lasting impression.
         </p>
 
         <a href="{{ url_for('shop') }}" class="button">
             SHOP COLLECTION
         </a>
-
     </div>
-
 </section>
 
 
-<!-- INTRO -->
 <section class="intro">
+    <p class="eyebrow">NAZIF'S SCENTS</p>
 
-    <p class="eyebrow">
-        NAZIF'S SCENTS
-    </p>
-
-    <h2>
-        Fragrance made personal.
-    </h2>
+    <h2>Fragrance made personal.</h2>
 
     <p>
-        Explore our collection of bold,
-        elegant and memorable scents.
+        Explore our collection of men's and women's fragrances.
     </p>
-
 </section>
 
 
-<!-- PRODUCTS -->
 <section class="products">
 
     <div class="section-heading">
-
         <div>
-            <p class="eyebrow">
-                FEATURED
-            </p>
-
-            <h2>
-                Our fragrances
-            </h2>
+            <p class="eyebrow">FEATURED</p>
+            <h2>Our fragrances</h2>
         </div>
 
         <a href="{{ url_for('shop') }}">
             View all →
         </a>
-
     </div>
 
 
@@ -81,35 +55,70 @@ Nazif's Scents | Home
 
         <div class="product-card">
 
-            <a href="{{ url_for('product', product_id=product.id) }}">
+            <a href="{{ url_for('product', product_id=product['id']) }}">
 
-                <img
-                    src="{{ url_for('static', filename='images/' + product.image) }}"
-                    alt="{{ product.name }}"
-                >
+                {% if product['id'] == 1 %}
+                    <img src="/static/images/nazif-noir.png" alt="Nazif Noir">
+
+                {% elif product['id'] == 2 %}
+                    <img src="/static/images/royal-oud.png" alt="Royal Oud">
+
+                {% elif product['id'] == 3 %}
+                    <img src="/static/images/velvet-rose.png" alt="Velvet Rose">
+
+                {% elif product['id'] == 4 %}
+                    <img src="/static/images/midnight-musk.png" alt="Midnight Musk">
+
+                {% elif product['id'] == 5 %}
+                    <img src="/static/images/golden-vanilla.png" alt="Golden Vanilla">
+
+                {% elif product['id'] == 6 %}
+                    <img src="/static/images/desert-oud.png" alt="Desert Oud">
+
+                {% elif product['id'] == 7 %}
+                    <img src="/static/images/black-amber.png" alt="Black Amber">
+
+                {% elif product['id'] == 8 %}
+                    <img src="/static/images/imperial-spice.png" alt="Imperial Spice">
+
+                {% elif product['id'] == 9 %}
+                    <img src="/static/images/silk-blossom.png" alt="Silk Blossom">
+
+                {% elif product['id'] == 10 %}
+                    <img src="/static/images/rose-elegance.png" alt="Rose Elegance">
+
+                {% elif product['id'] == 11 %}
+                    <img src="/static/images/pearl-jasmine.png" alt="Pearl Jasmine">
+
+                {% elif product['id'] == 12 %}
+                    <img src="/static/images/vanilla-royale.png" alt="Vanilla Royale">
+                {% endif %}
 
             </a>
+
 
             <div class="card-info">
 
                 <p class="category">
-                    {{ product.category }}
+                    {{ product['category'] }}
                 </p>
 
                 <h3>
-                    {{ product.name }}
+                    {{ product['name'] }}
                 </h3>
 
                 <p>
-                    {{ product.notes }}
+                    {{ product['notes'] }}
                 </p>
 
                 <strong>
-                    ${{ "%.2f"|format(product.price) }}
+                    ${{ "%.2f"|format(product['price']) }}
                 </strong>
 
+                <br>
+
                 <a
-                    href="{{ url_for('add_to_cart', product_id=product.id) }}"
+                    href="{{ url_for('add_to_cart', product_id=product['id']) }}"
                     class="add-button"
                 >
                     ADD TO CART
