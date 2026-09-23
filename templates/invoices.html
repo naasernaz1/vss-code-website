@@ -13,22 +13,79 @@ Invoices | Nazif's Scents
     </p>
 
     <h1>
-        Invoices
+        Your Invoices
     </h1>
+
+    <p>
+        View your completed orders below.
+    </p>
 
 </section>
 
 
-<section class="empty">
+<section class="invoice-history">
 
-    <h2>
-        Your invoices
-    </h2>
+    {% if invoices %}
 
-    <p>
-        Your completed order invoices will
-        appear here.
-    </p>
+        {% for invoice in invoices %}
+
+            <div class="invoice-card">
+
+                <h3>
+                    {{ invoice.invoice_number }}
+                </h3>
+
+                <p>
+                    <strong>Date:</strong>
+                    {{ invoice.date }}
+                </p>
+
+                <p>
+                    <strong>Name:</strong>
+                    {{ invoice.customer_name }}
+                </p>
+
+                <p>
+                    <strong>Total:</strong>
+                    ${{ "%.2f"|format(invoice.total) }}
+                </p>
+
+                <a
+                    href="{{ url_for(
+                        'view_invoice',
+                        invoice_number=invoice.invoice_number
+                    ) }}"
+                    class="button"
+                >
+                    VIEW INVOICE
+                </a>
+
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <div class="empty">
+
+            <h2>
+                No invoices yet
+            </h2>
+
+            <p>
+                Your completed order invoices will appear here.
+            </p>
+
+            <a
+                href="{{ url_for('shop') }}"
+                class="button"
+            >
+                START SHOPPING
+            </a>
+
+        </div>
+
+    {% endif %}
 
 </section>
 

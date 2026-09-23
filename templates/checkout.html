@@ -16,35 +16,98 @@ Checkout | Nazif's Scents
         Complete your order
     </h1>
 
+    <p>
+        Enter your details below to place your order.
+    </p>
+
 </section>
 
 
 <section class="checkout">
 
-    <form>
+    {% if error %}
+
+        <p class="error-message">
+            {{ error }}
+        </p>
+
+    {% endif %}
+
+
+    <form method="POST">
 
         <label>
             Full Name
         </label>
 
-        <input type="text" required>
+        <input
+            type="text"
+            name="name"
+            required
+        >
 
 
         <label>
             Email
         </label>
 
-        <input type="email" required>
+        <input
+            type="email"
+            name="email"
+            required
+        >
 
 
         <label>
             Delivery Address
         </label>
 
-        <textarea required></textarea>
+        <textarea
+            name="address"
+            required
+        ></textarea>
 
 
-        <button class="button" type="submit">
+        <div class="order-summary">
+
+            <h2>
+                Order Summary
+            </h2>
+
+
+            {% for product in products %}
+
+                <div class="checkout-item">
+
+                    <span>
+                        {{ product.name }}
+                        x {{ product.quantity }}
+                    </span>
+
+                    <span>
+                        ${{ "%.2f"|format(product.line_total) }}
+                    </span>
+
+                </div>
+
+            {% endfor %}
+
+
+            <hr>
+
+
+            <h2>
+                Total:
+                ${{ "%.2f"|format(total) }}
+            </h2>
+
+        </div>
+
+
+        <button
+            class="button"
+            type="submit"
+        >
             PLACE ORDER
         </button>
 
