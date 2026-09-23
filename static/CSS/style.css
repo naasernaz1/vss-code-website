@@ -478,3 +478,38 @@ footer p {
         font-size: 45px;
     }
 }
+.hero {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #050505 0%,
+            #111111 30%,
+            #3b2a0f 60%,
+            #b8862b 82%,
+            #050505 100%
+        );
+
+    background-size: 200% 200%;
+
+    animation: goldBlackFade 10s ease-in-out infinite;
+
+    color: white;
+}
+
+
+@keyframes goldBlackFade {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
