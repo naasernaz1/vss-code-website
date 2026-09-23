@@ -1,0 +1,33 @@
+[
+    {
+        "invoice_number": "INV-20260924-101237",
+        "date": "24/09/2026",
+        "customer_name": "naaser nazif",
+        "customer_email": "naaser198198@gmail.com",
+        "customer_address": "20 brookby road",
+        "items": [
+            {
+                "id": 7,
+                "name": "Black Amber",
+                "price": 64.99,
+                "quantity": 1,
+                "line_total": 64.99
+            },
+            {
+                "id": 9,
+                "name": "Silk Blossom",
+                "price": 49.99,
+                "quantity": 1,
+                "line_total": 49.99
+            },
+            {
+                "id": 2,
+                "name": "Royal Oud",
+                "price": 59.99,
+                "quantity": 1,
+                "line_total": 59.99
+            }
+        ],
+        "total": 174.97
+    }
+]

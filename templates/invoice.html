@@ -1,0 +1,16 @@
+  <h2>
+        Total:
+        ${{ "%.2f"|format(invoice.total) }}
+    </h2>
+
+
+    <button
+        class="button"
+        onclick="window.print()"
+    >
+        PRINT INVOICE
+    </button>
+
+</section>
+
+{% endblock %}
